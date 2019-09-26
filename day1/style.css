@@ -1,0 +1,11 @@
+h1 {
+    color: rgb(24, 184, 184);
+}
+
+.rem {
+    margin-left: 5px;
+    background-color: white;
+    color: red;
+    border: none;
+    cursor: pointer;
+}
