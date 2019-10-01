@@ -1,0 +1,80 @@
+html {
+    background-color: rgb(211, 253, 239);
+    background-size: cover;
+    font-size: 15px;
+    font-family: Helvetica;
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    font-size: 2rem;
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.clock {
+    background: url('clockWall.jpg');
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    border: 15px solid black;
+    margin: 50px auto;
+    position: relative;
+    padding: 2rem;
+    box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #EFEFEF,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+}
+
+.clockCircle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-3px); /* account for the height of the clock hands */
+  }
+
+  .hand {
+    width: 50%;
+    background: black;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transform: rotate(90deg);
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.3, 1);
+    z-index: 1;
+    margin-top: -15rem;
+  }
+
+  .h-hand {
+      height: 8px;
+  }
+
+  .min-hand {
+    height: 5px;
+  }
+
+  .sec-hand {
+    height: 2px;
+    background-color: red;
+  }
+
+  .middlePoint {
+      margin: auto;
+      margin-top: 15rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: black;
+      z-index: 2;
+      position: relative;
+  }
+
+  svg {
+      color: white;
+      overflow: visible;
+  }
