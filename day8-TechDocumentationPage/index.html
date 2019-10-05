@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header id="title">All About JS</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#Vars">Variables and Datatypes</a></li>
+            <li><a class="nav-link" href="#Scope">Understanding variable scopes in Javascript</a></li>
+            <li><a class="nav-link" href="#Functions">Functions</a></li>
+            <li><a class="nav-link" href="#Objects">Objects in Javascript</a></li>
+            <li><a class="nav-link" href="#IfElse">If-else Statements</a></li>
+            <li><a class="nav-link" href="#Switch">Switch-Case</a></li>
+            <li><a class="nav-link" href="#Loops">Loops</a></li>
+            <li><a class="nav-link" href="#Modules">Modules</a></li>
+            <li><a class="nav-link" href="#Conversion">Type Conversion</a></li>
+            <li><a class="nav-link" href="#Hoisting">Javascript Hoisting</a></li>
+            <li><a class="nav-link" href="#ThisIdentif">This Identifier</a></li>
+            <li><a class="nav-link" href="#Strict">Strict Mode in Javascript</a></li>
+            <li><a class="nav-link" href="#Callback">Callbacks</a></li>
+            <li><a class="nav-link" href="#OOP">Introduction to OOPs</a></li>
+            <li><a class="nav-link" href="#VarandLet">Difference between var and let</a></li>
+            <li><a class="nav-link" href="#Performance">Performance</a></li>
+        </ul>
+    </nav>
+
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <article>
+                <p>
+                    JavaScript is a cross-platform, object-oriented scripting language. It
+                    is a small and lightweight language. Inside a host environment (for
+                    example, a web browser), JavaScript can be connected to the objects of
+                    its environment to provide programmatic control over them.
+                </p>
+                <p>
+                    JavaScript contains a standard library of objects, such as Array, Date,
+                    and Math, and a core set of language elements such as operators, control
+                    structures, and statements. Core JavaScript can be extended for a
+                    variety of purposes by supplementing it with additional objects; for
+                    example:
+                </p>
+                <ul>
+                    <li>
+                        Client-side JavaScript extends the core language by supplying objects
+                        to control a browser and its Document Object Model (DOM). For example,
+                        client-side extensions allow an application to place elements on an
+                        HTML form and respond to user events such as mouse clicks, form input,
+                        and page navigation.
+                    </li>
+                    <li>
+                        Server-side JavaScript extends the core language by supplying objects
+                        relevant to running JavaScript on a server. For example, server-side
+                        extensions allow an application to communicate with a database,
+                        provide continuity of information from one invocation to another of
+                        the application, or perform file manipulations on a server.
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="main-section" id="Vars">
+            <header>Variables and Datatypes</header>
+            <article>
+                <p>
+                    There are majorly two types of languages. First, one is Statically typed language where each
+                    variable and expression type is already known at compile time. Once a variable is declared to be of
+                    a certain data type, it cannot hold values of other data types.Example: C, C++, Java.
+                </p>
+                <code>
+                        // Java(Statically typed) 
+                        int x = 5 // variable x is of type int and it will not store any other type. 
+                        string y = 'abc' // type string and will only accept string values 
+                </code>
+                <p>
+                    Other, Dynamically typed languages: These languages can receive different data types over time. For
+                    example- Ruby, Python, JavaScript etc.
+                </p>
+                <code>
+                        // Javascript(Dynamically typed) 
+                        var x = 5; // can store an integer 
+                        var name = 'string'; // can also store a string.                         
+                </code>
+                <p>
+                    The latest ECMAScript(ES6) standard defines seven data types: Out of which six data types are
+                    Primitive(predefined).
+                </p>
+                <ul>
+                    <li>Numbers: 5, 6.5, 7 etc.</li>
+                    <li>String: “Hello World"</li>
+                    <li>Boolean: Represent a logical entity and can have two values: true or false</li>
+                    <li>Null: This type has only one value : null.</li>
+                    <li>Undefined: A variable that has not been assigned a value is undefined.</li>
+                    <li>Object: It is the most important data-type and forms the building blocks for modern JavaScript
+                    </li>
+                </ul>
+                <p>
+                    Variables in JavaScript are containers which hold reusable data. It is the basic unit of storage in
+                    a program.
+                </p>
+                <ul>
+                    <li>The value stored in a variable can be changed during program execution</li>
+                    <li>A variable is only a name given to a memory location, all the operations done on the variable
+                        effects that memory location</li>
+                    <li>In JavaScript, all the variables must be declared before they can be used</li>
+                </ul>
+                <code>
+                        var var_name;
+                        var x;
+                </code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Scope">
+            <header>Understanding variable scopes in Javascript</header>
+            <article>
+                <p>
+                    In JavaScript, there are two types of scopes:
+                </p>
+                <ul>
+                    <li>Global Scope – Scope outside the outermost function attached to window</li>
+                    <li>Local Scope – Inside the function being executed</li>
+                </ul>
+                <p>
+                    Let’s look at the code below. We have a global variable defined in first line in global scope. Then
+                    we have a local variable defined inside the function fun().
+                </p>
+                <code>
+                        let globalLet = "This is a global variable"; 
+
+                        function fun() { 
+                        let localLet = "This is a local variable"; 
+                        
+                        console.log(globalLet); // This is a global variable 
+                        console.log(localLet); // This is a local variable 
+                        } 
+                        fun(); 
+                </code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Functions">
+            <header>Functions</header>
+            <article>
+                <p>
+                    A function is a set of statements that take inputs, do some specific computation and produces
+                    output. Basically, a function is a set of statements that performs some tasks or does some
+                    computation and then returns the result to the user.
+                </p>
+                <p>
+                    The idea is to put some commonly or repeatedly done task together and make a function so that
+                    instead of writing the same code again and again for different inputs, we can call that function
+                </p>
+                <p>
+                    We can create functions in JavaScript using the keyword function. The basic syntax to create a
+                    function in JavaScript is shown below.
+                </p>
+                <code>
+                        function functionName(Parameter1, Parameter2, ..)
+                        {
+                            // Function body
+                        }
+                </code>
+                <p>
+                    To create a function in JavaScript, we have to first use the keyword function, separated by name of
+                    function and parameters within parenthesis. The part of function inside the curly braces {} is the
+                    body of the function.
+                </p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Objects">
+            <header>Objects in Javascript</header>
+            <article>
+                <p>
+                    Objects, in JavaScript, is it’s most important data-type and forms the building blocks for modern
+                    JavaScript. These objects are quite different from JavaScript’s primitive data-types(Number, String,
+                    Boolean, null, undefined and symbol) in the sense that while these primitive data-types all store a
+                    single value each (depending on their types).
+                </p>
+                <ul>
+                    <li>
+                        Objects are more complex and each object may contain any combination of these primitive
+                        data-types as well as reference data-types
+                    </li>
+                    <li>
+                        An object, is a reference data type. Variables that are assigned a reference value are given a
+                        reference or a pointer to that value. That reference or pointer points to the location in memory
+                        where the object is stored. The variables don’t actually store the value
+                    </li>
+                    <li>
+                        Loosely speaking, objects in JavaScript may be defined as an unordered collection of related
+                        data, of primitive or reference types, in the form of “key: value” pairs. These keys can be
+                        variables or functions and are called properties and methods, respectively, in the context of an
+                        object.
+                    </li>
+                </ul>
+            </article>
+        </section>
+
+        <section class="main-section" id="IfElse">
+            <header>If-Else Statements</header>
+            <article>
+                <p>
+                    Decision Making in programming is similar to decision making in real life. In programming also we
+                    face some situations where we want a certain block of code to be executed when some condition is
+                    fulfilled.
+                </p>
+                <p>
+                    A programming language uses control statements to control the flow of execution of the program based
+                    on certain conditions. These are used to cause the flow of execution to advance and branch based on
+                    changes to the state of a program.
+                </p>
+                <p>
+                    if-else: The if statement alone tells us that if a condition is true it will execute a block of
+                    statements and if the condition is false it won’t. But what if we want to do something else if the
+                    condition is false. Here comes the else statement. We can use the else statement with if statement
+                    to execute a block of code when the condition is false.
+                </p>
+                <code>
+                        if (condition)
+                        {
+                            // Executes this block if
+                            // condition is true
+                        }
+                        else
+                        {
+                            // Executes this block if
+                            // condition is false
+                        }
+                </code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Switch">
+            <header>Switch-Case</header>
+            <article>
+                <p>
+                    The switch case statement in JavaScript is also used for decision making purposes. In some cases,
+                    using the switch case statement is seen to be more convenient over if-else statements. Consider a
+                    situation when we want to test a variable for hundred different values and based on the test we want
+                    to execute some task. Using if-else statement for this purpose will be less efficient over switch
+                    case statements and also it will make the code look messy
+                </p>
+                <p>
+                    The switch case statement is a multiway branch statement. It provides an easy way to dispatch
+                    execution to different parts of code based on the value of the expression.
+                </p>
+                <code>
+                        switch (expression)
+                        {
+                            case value1:
+                                statement1;
+                                break;
+                            case value2:
+                                statement2;
+                                break;
+                            .
+                            .
+                            case valueN:
+                                statementN;
+                                break;
+                            default:
+                                statementDefault;
+                        }
+                </code>
+            </article>
+        </section>
+
+        <section class="main-section" id="Loops">
+            <header>Loops</header>
+            <article>
+                <p></p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Modules">
+            <header>Modules</header>
+            <article>
+                <p></p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Conversion">
+            <header>Type Conversion</header>
+            <article>
+                <p></p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Hoisting">
+            <header>JavaScript Hoisting</header>
+            <article>
+                <p></p>
+            </article>
+        </section>
+
+        <section class="main-section" id="ThisIdentif">
+            <header>This Identifier</header>
+            <article>
+                <p></p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Strict">
+            <header>Strict Mode in JavaScript</header>
+            <article>
+                <p></p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Callbacks">
+            <header>Callbacks</header>
+            <article>
+                <p></p>
+            </article>
+        </section>
+
+        <section class="main-section" id="OOP">
+            <header>Introduction to OOPs</header>
+            <article>
+                <p></p>
+            </article>
+        </section>
+
+        <section class="main-section" id="VarandLet">
+            <header>Difference between var and let</header>
+            <article>
+                <p></p>
+            </article>
+        </section>
+
+        <section class="main-section" id="Performance">
+            <header>Performance</header>
+            <article>
+                <p></p>
+            </article>
+        </section>
+    </main>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
